@@ -91,20 +91,6 @@ class CompanyDetailBottomSheet : BottomSheetDialogFragment() {
                     tabLayout.getTabAt(i)?.setIcon(tabIcons[i])
                 }
 
-
-                /* pager.adapter = ViewPagerAdapter(this@CompanyBottomSheet,it)
-                 TabLayoutMediator(tabLayout,pager){tab, position ->
-                     *//*val icon = when(position){
-                        0 -> R.drawable.ic_outline_sale_24
-                        1 -> R.drawable.ic_add_card_outline_24
-                        2 -> R.drawable.ic_outline_download_24
-                        3 -> R.drawable.ic_session_24
-                        else -> R.drawable.ic_outline_sale_24
-                       // else -> IllegalArgumentException("Invalid position")
-                    }*//*
-                    tab.text = "Don ${position+1}"
-                    //tab.setIcon(icon)
-                }.attach()*/
             }
 
         }

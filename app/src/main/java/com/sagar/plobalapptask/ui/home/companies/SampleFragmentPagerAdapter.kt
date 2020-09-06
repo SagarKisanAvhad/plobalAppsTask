@@ -9,9 +9,7 @@ import com.sagar.plobalapptask.data.db.entities.Company
 
 class SampleFragmentPagerAdapter(fm: FragmentManager, val company: Company) :
     FragmentPagerAdapter(fm) {
-    val PAGE_COUNT = 4
-    private val tabTitles =
-        arrayOf("Sale", "Card", "Download", "Session")
+   private val PAGE_COUNT = 4
 
     override fun getCount(): Int {
         return PAGE_COUNT

@@ -12,10 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.sagar.plobalapptask.R
 import com.sagar.plobalapptask.data.db.entities.Company
 import com.sagar.plobalapptask.databinding.CompaniesFragmentBinding
-import com.sagar.plobalapptask.util.Coroutines
-import com.sagar.plobalapptask.util.hide
-import com.sagar.plobalapptask.util.show
-import com.sagar.plobalapptask.util.visible
+import com.sagar.plobalapptask.util.*
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.Section
 import com.xwray.groupie.ViewHolder
@@ -91,18 +88,13 @@ class CompaniesFragment : Fragment(), KodeinAware, SortingBottomSheet.SortClickL
     private fun List<Company>.mapToCompanyItems() = map { CompanyItem(it) }
 
     override fun onSortClick(flag: Int) {
-        val list = companyList?.sortedBy {
-            when (flag) {
-                1 -> it.data.totalSale.total
-                2 -> it.data.addToCart.total
-                3 -> it.data.downloads.total
-                else -> it.data.sessions.total
-            }
-
-        } ?: emptyList()
-        val items = list.mapToCompanyItems()
-        section.update(items)
-        sortedBy = flag
+        companyList?.let {
+            val companyArray = it.toTypedArray()
+            SortUtil.sort(companyArray, 0, companyArray.lastIndex, flag)
+            val items = companyArray.toList().mapToCompanyItems()
+            section.update(items)
+            sortedBy = flag
+        }
     }
 }
 

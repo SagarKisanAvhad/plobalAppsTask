@@ -5,11 +5,11 @@ import androidx.lifecycle.MutableLiveData
 import com.sagar.plobalapptask.data.db.entities.Company
 import com.sagar.plobalapptask.data.network.MyApi
 import com.sagar.plobalapptask.data.network.SafeApiRequest
+import com.sagar.plobalapptask.util.SortUtil
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
 
-private const val MINIMUM_INTERVAL = 6
 
 class CompanyRepository(
     private val api: MyApi
@@ -17,7 +17,9 @@ class CompanyRepository(
     private val companies = MutableLiveData<List<Company>>()
     private suspend fun fetchCompanies() {
         val companyResponse = apiRequest { api.companies() }
-        companies.postValue(companyResponse.companyList.sortedBy {
+        val companyArray = companyResponse.companyList.toTypedArray()
+        SortUtil.sort(companyArray, 0, companyArray.lastIndex, 1)
+        companies.postValue(companyArray.toList().sortedBy {
             it.data.totalSale.total
         })
     }

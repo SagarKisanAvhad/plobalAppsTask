@@ -5,17 +5,17 @@ import com.google.gson.annotations.SerializedName
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize
-data class TotalSale(
+data class Detail(
     @SerializedName("total") @JvmField val total: Long,
     @SerializedName("month_wise") @JvmField val monthWise: MonthWise
 ) : Parcelable
 
 @Parcelize
 data class CompanyDetails(
-    @SerializedName("sessions") @JvmField val sessions: Sessions,
-    @SerializedName("downloads") @JvmField val downloads: Downloads,
-    @SerializedName("total_sale") @JvmField val totalSale: TotalSale,
-    @SerializedName("add_to_cart") @JvmField val addToCart: AddToCart
+    @SerializedName("sessions") @JvmField val sessions: Detail,
+    @SerializedName("downloads") @JvmField val downloads: Detail,
+    @SerializedName("total_sale") @JvmField val totalSale: Detail,
+    @SerializedName("add_to_cart") @JvmField val addToCart: Detail
 ) : Parcelable
 
 
@@ -37,7 +37,7 @@ data class MonthWise(
     @SerializedName("mar") @JvmField val mar: Long
 ) : Parcelable
 
-@Parcelize
+/*@Parcelize
 data class Sessions(
     @SerializedName("total") @JvmField val total: Long,
     @SerializedName("month_wise") @JvmField val monthWise: MonthWise
@@ -53,4 +53,4 @@ data class AddToCart(
 data class Downloads(
     @SerializedName("total") @JvmField val total: Long,
     @SerializedName("month_wise") @JvmField val monthWise: MonthWise
-) : Parcelable
+) : Parcelable*/
