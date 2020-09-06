@@ -36,21 +36,3 @@ data class MonthWise(
     @SerializedName("jan") @JvmField val jan: Long,
     @SerializedName("mar") @JvmField val mar: Long
 ) : Parcelable
-
-/*@Parcelize
-data class Sessions(
-    @SerializedName("total") @JvmField val total: Long,
-    @SerializedName("month_wise") @JvmField val monthWise: MonthWise
-) : Parcelable
-
-@Parcelize
-data class AddToCart(
-    @SerializedName("total") @JvmField val total: Long,
-    @SerializedName("month_wise") @JvmField val monthWise: MonthWise
-) : Parcelable
-
-@Parcelize
-data class Downloads(
-    @SerializedName("total") @JvmField val total: Long,
-    @SerializedName("month_wise") @JvmField val monthWise: MonthWise
-) : Parcelable*/
