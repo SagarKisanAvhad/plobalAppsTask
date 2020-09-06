@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tv_sort_by"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/sort_by"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@id/tv_sort_by"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:background="#E5E5E5" />
+
+        <ImageView
+            android:id="@+id/iv_sale"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            app:srcCompat="@drawable/ic_baseline_check_24"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="16dp"
+            tools:visibility="visible"
+            app:layout_constraintTop_toTopOf="@id/tv_sale"
+            app:layout_constraintBottom_toBottomOf="@id/tv_sale"
+            android:visibility="invisible" />
+
+        <TextView
+            android:id="@+id/tv_sale"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/iv_sale"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/total_sales"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            app:layout_constraintTop_toBottomOf="@id/view" />
+
+        <ImageView
+            android:id="@+id/iv_card"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            app:srcCompat="@drawable/ic_baseline_check_24"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="16dp"
+            tools:visibility="visible"
+            app:layout_constraintTop_toTopOf="@id/tv_card"
+            app:layout_constraintBottom_toBottomOf="@id/tv_card"
+            android:visibility="invisible" />
+
+        <TextView
+            android:id="@+id/tv_card"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/iv_card"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/add_to_card"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            app:layout_constraintTop_toBottomOf="@id/tv_sale" />
+
+        <ImageView
+            android:id="@+id/iv_download"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            app:srcCompat="@drawable/ic_baseline_check_24"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="16dp"
+            tools:visibility="visible"
+            app:layout_constraintTop_toTopOf="@id/tv_download"
+            app:layout_constraintBottom_toBottomOf="@id/tv_download"
+            android:visibility="invisible" />
+
+        <TextView
+            android:id="@+id/tv_download"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/iv_download"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/downloads"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            app:layout_constraintTop_toBottomOf="@id/tv_card" />
+
+        <ImageView
+            android:id="@+id/iv_session"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            app:srcCompat="@drawable/ic_baseline_check_24"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="16dp"
+            tools:visibility="visible"
+            app:layout_constraintTop_toTopOf="@id/tv_session"
+            app:layout_constraintBottom_toBottomOf="@id/tv_session"
+            android:visibility="invisible" />
+
+        <TextView
+            android:id="@+id/tv_session"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/iv_session"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/user_sessions"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            app:layout_constraintTop_toBottomOf="@id/tv_download" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
