@@ -88,12 +88,14 @@ class CompaniesFragment : Fragment(), KodeinAware, SortingBottomSheet.SortClickL
     private fun List<Company>.mapToCompanyItems() = map { CompanyItem(it) }
 
     override fun onSortClick(flag: Int) {
-        companyList?.let {
-            val companyArray = it.toTypedArray()
-            SortUtil.sort(companyArray, 0, companyArray.lastIndex, flag)
-            val items = companyArray.toList().mapToCompanyItems()
-            section.update(items)
-            sortedBy = flag
+        if (sortedBy != flag) {
+            companyList?.let {
+                val companyArray = it.toTypedArray()
+                SortUtil.sort(companyArray, 0, companyArray.lastIndex, flag)
+                val items = companyArray.toList().mapToCompanyItems()
+                section.update(items)
+                sortedBy = flag
+            }
         }
     }
 }

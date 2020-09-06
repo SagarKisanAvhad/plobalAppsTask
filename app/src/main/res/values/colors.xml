@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <color name="colorPrimary">#D3D3D3</color>
+    <!--<color name="colorPrimary">#D3D3D3</color>
     <color name="colorPrimaryDark">#D3D3D3</color>
-    <color name="colorAccent">#D3D3D3</color>
+    <color name="colorAccent">#D3D3D3</color>-->
+
+    <color name="colorPrimary">@color/black</color>
+    <color name="colorPrimaryDark">@color/gray_50</color>
+    <color name="colorAccent">@color/blue_700</color>
 
     <color name="card_stroke_color">#D3D3D3</color>
 
@@ -11,6 +15,12 @@
     <color name="view_detail_background">#EAEAEA</color>
     <color name="black">#000000</color>
     <color name="white">#FFFFFF</color>
+
+    <color name="gray_50">#FAFAFA</color>
+    <color name="gray_100">#F5F5F5</color>
+    <color name="gray_200">#EEEEEE</color>
+    <color name="gray_500">#9E9E9E</color>
+
 
     <color name="red_100">#F44336</color>
     <color name="red_300">#3F51B5</color>

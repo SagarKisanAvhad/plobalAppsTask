@@ -42,7 +42,8 @@ class CompanyDetailBottomSheet : BottomSheetDialogFragment() {
             binding.run {
                 tvCompanyName.text = it.name
                 tvCompanySector.text = it.name
-                tvSale.setText("${it.currency} ${it.data.totalSale.total}")
+                tvTotalValue.text =
+                    getString(R.string.total_value, it.currency, it.data.totalSale.total)
                 viewPager.apply {
                     adapter = SampleFragmentPagerAdapter(childFragmentManager, it)
                 }
@@ -61,20 +62,36 @@ class CompanyDetailBottomSheet : BottomSheetDialogFragment() {
                     override fun onPageSelected(position: Int) {
                         when (position) {
                             0 -> {
-                                tvTotal.text = "Total Sales"
-                                tvSale.setText("${it.currency} ${it.data.totalSale.total}")
+                                tvTotal.text = getString(R.string.total_sales_label)
+                                tvTotalValue.text = getString(
+                                    R.string.total_value,
+                                    it.currency,
+                                    it.data.totalSale.total
+                                )
                             }
                             1 -> {
-                                tvTotal.text = "Total Cards"
-                                tvSale.setText("${it.currency} ${it.data.addToCart.total}")
+                                tvTotal.text = getString(R.string.total_card_label)
+                                tvTotalValue.text = getString(
+                                    R.string.total_value,
+                                    it.currency,
+                                    it.data.addToCart.total
+                                )
                             }
                             2 -> {
-                                tvTotal.text = "Total Downloads"
-                                tvSale.setText("${it.currency} ${it.data.downloads.total}")
+                                tvTotal.text = getString(R.string.total_download_label)
+                                tvTotalValue.text = getString(
+                                    R.string.total_value,
+                                    it.currency,
+                                    it.data.downloads.total
+                                )
                             }
                             3 -> {
-                                tvTotal.text = "Total Sessions"
-                                tvSale.setText("${it.currency} ${it.data.sessions.total}")
+                                tvTotal.text = getString(R.string.total_session_label)
+                                tvTotalValue.text = getString(
+                                    R.string.total_value,
+                                    it.currency,
+                                    it.data.sessions.total
+                                )
                             }
                         }
                     }

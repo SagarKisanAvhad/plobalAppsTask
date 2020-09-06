@@ -15,7 +15,7 @@
             android:layout_marginTop="@dimen/margin_extra_large"
             android:textSize="@dimen/dimen_company_name_size"
             android:textStyle="bold"
-            app:layout_constraintEnd_toStartOf="@id/tv_sale"
+            app:layout_constraintEnd_toStartOf="@id/tv_total_value"
             app:layout_constraintHorizontal_chainStyle="spread_inside"
             app:layout_constraintStart_toEndOf="@id/iv_company"
             app:layout_constraintTop_toTopOf="parent"
@@ -32,7 +32,7 @@
             tools:text="Electronics" />
 
         <TextView
-            android:id="@+id/tv_sale"
+            android:id="@+id/tv_total_value"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/margin_medium"
@@ -54,8 +54,8 @@
             android:gravity="end"
             android:text="@string/total_sales_label"
             android:textSize="@dimen/dimen_total_lable_size"
-            app:layout_constraintBottom_toTopOf="@id/tv_sale"
-            app:layout_constraintEnd_toEndOf="@id/tv_sale" />
+            app:layout_constraintBottom_toTopOf="@id/tv_total_value"
+            app:layout_constraintEnd_toEndOf="@id/tv_total_value" />
 
         <ImageView
             android:id="@+id/iv_company"

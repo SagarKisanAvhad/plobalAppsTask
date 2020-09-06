@@ -15,7 +15,11 @@ class CompanyItem(
 
     override fun bind(viewBinding: ItemCompanyBinding, position: Int) {
         viewBinding.company = company
-        viewBinding.tvSale.setText("${company.currency} ${company.data.totalSale.total}")
+        viewBinding.tvSale.text = viewBinding.root.context.getString(
+            R.string.total_value,
+            company.currency,
+            company.data.totalSale.total
+        )
     }
 
     fun getCompany() = company
