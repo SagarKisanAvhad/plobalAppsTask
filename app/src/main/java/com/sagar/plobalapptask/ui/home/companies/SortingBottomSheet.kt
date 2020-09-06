@@ -1,6 +1,5 @@
 package com.sagar.plobalapptask.ui.home.companies
 
-import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,7 +7,6 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.sagar.plobalapptask.R
-import com.sagar.plobalapptask.data.db.entities.Company
 import com.sagar.plobalapptask.databinding.DialogSortingBottomsheetBinding
 import com.sagar.plobalapptask.util.invisible
 import com.sagar.plobalapptask.util.visible
@@ -16,7 +14,7 @@ import com.sagar.plobalapptask.util.visible
 
 class SortingBottomSheet : BottomSheetDialogFragment() {
     lateinit var binding: DialogSortingBottomsheetBinding
-    private var company: Company? = null
+    private var flag: Int = 1
     private var listener: SortClickListener? = null
 
     override fun onCreateView(
@@ -35,24 +33,24 @@ class SortingBottomSheet : BottomSheetDialogFragment() {
         setupView()
     }
 
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
-        if (context is SortClickListener)
-            listener = context
+    fun setSortClickListener(sortClickListener: SortClickListener, flag: Int) {
+        listener = sortClickListener
+        this.flag = flag
     }
 
     private fun setupView() {
-        binding.ivSale.setOnClickListener { handleClick(1) }
-        binding.tvSale.setOnClickListener { handleClick(1) }
+        handleClick(flag)
+        binding.ivSale.setOnClickListener { callSortClickAndDismiss(1) }
+        binding.tvSale.setOnClickListener { callSortClickAndDismiss(1) }
 
-        binding.ivCard.setOnClickListener { handleClick(2) }
-        binding.tvCard.setOnClickListener { handleClick(2) }
+        binding.ivCard.setOnClickListener { callSortClickAndDismiss(2) }
+        binding.tvCard.setOnClickListener { callSortClickAndDismiss(2) }
 
-        binding.ivDownload.setOnClickListener { handleClick(3) }
-        binding.tvDownload.setOnClickListener { handleClick(3) }
+        binding.ivDownload.setOnClickListener { callSortClickAndDismiss(3) }
+        binding.tvDownload.setOnClickListener { callSortClickAndDismiss(3) }
 
-        binding.ivSession.setOnClickListener { handleClick(4) }
-        binding.tvSession.setOnClickListener { handleClick(4) }
+        binding.ivSession.setOnClickListener { callSortClickAndDismiss(4) }
+        binding.tvSession.setOnClickListener { callSortClickAndDismiss(4) }
     }
 
     private fun handleClick(flag: Int) {
@@ -71,6 +69,10 @@ class SortingBottomSheet : BottomSheetDialogFragment() {
                 binding.ivSession.visible()
             }
         }
+
+    }
+
+    private fun callSortClickAndDismiss(flag: Int) {
         listener?.onSortClick(flag)
         dismiss()
     }

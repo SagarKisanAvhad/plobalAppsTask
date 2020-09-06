@@ -17,7 +17,9 @@ class CompanyRepository(
     private val companies = MutableLiveData<List<Company>>()
     private suspend fun fetchCompanies() {
         val companyResponse = apiRequest { api.companies() }
-        companies.postValue(companyResponse.companyList)
+        companies.postValue(companyResponse.companyList.sortedBy {
+            it.data.totalSale.total
+        })
     }
 
     suspend fun getCompanies(): LiveData<List<Company>> {

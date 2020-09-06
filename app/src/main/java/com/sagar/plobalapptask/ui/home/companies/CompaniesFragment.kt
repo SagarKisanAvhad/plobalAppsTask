@@ -30,6 +30,7 @@ class CompaniesFragment : Fragment(), KodeinAware, SortingBottomSheet.SortClickL
     private lateinit var binding: CompaniesFragmentBinding
     private lateinit var section: Section
     private var companyList: List<Company>? = null
+    private var sortedBy: Int = 1
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -44,7 +45,9 @@ class CompaniesFragment : Fragment(), KodeinAware, SortingBottomSheet.SortClickL
     private fun bindUi() {
         section = Section()
         binding.tvSort.setOnClickListener {
-            SortingBottomSheet.newInstance().show(childFragmentManager, "Sorting Bottom sheet")
+            SortingBottomSheet.newInstance().apply {
+                setSortClickListener(this@CompaniesFragment, sortedBy)
+            }.show(childFragmentManager, "Sorting Bottom sheet")
         }
 
         Coroutines.main {
@@ -88,8 +91,18 @@ class CompaniesFragment : Fragment(), KodeinAware, SortingBottomSheet.SortClickL
     private fun List<Company>.mapToCompanyItems() = map { CompanyItem(it) }
 
     override fun onSortClick(flag: Int) {
-        val list = companyList?.sortedBy { it.data.downloads.total } ?: emptyList()
-        section.update(list.mapToCompanyItems())
+        val list = companyList?.sortedBy {
+            when (flag) {
+                1 -> it.data.totalSale.total
+                2 -> it.data.addToCart.total
+                3 -> it.data.downloads.total
+                else -> it.data.sessions.total
+            }
+
+        } ?: emptyList()
+        val items = list.mapToCompanyItems()
+        section.update(items)
+        sortedBy = flag
     }
 }
 
