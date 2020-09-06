@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.viewpager.widget.ViewPager
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.sagar.plobalapptask.R
 import com.sagar.plobalapptask.data.db.entities.Company
@@ -46,6 +47,38 @@ class CompanyDetailBottomSheet : BottomSheetDialogFragment() {
                     adapter = SampleFragmentPagerAdapter(childFragmentManager, it)
                 }
                 tabLayout.setupWithViewPager(viewPager)
+
+                viewPager.addOnPageChangeListener(object : ViewPager.OnPageChangeListener {
+                    override fun onPageScrollStateChanged(state: Int) {}
+
+                    override fun onPageScrolled(
+                        position: Int,
+                        positionOffset: Float,
+                        positionOffsetPixels: Int
+                    ) {
+                    }
+
+                    override fun onPageSelected(position: Int) {
+                        when (position) {
+                            0 -> {
+                                tvTotal.text = "Total Sales"
+                                tvSale.setText("${it.currency} ${it.data.totalSale.total}")
+                            }
+                            1 -> {
+                                tvTotal.text = "Total Cards"
+                                tvSale.setText("${it.currency} ${it.data.addToCart.total}")
+                            }
+                            2 -> {
+                                tvTotal.text = "Total Downloads"
+                                tvSale.setText("${it.currency} ${it.data.downloads.total}")
+                            }
+                            3 -> {
+                                tvTotal.text = "Total Sessions"
+                                tvSale.setText("${it.currency} ${it.data.sessions.total}")
+                            }
+                        }
+                    }
+                })
 
                 val tabIcons = intArrayOf(
                     R.drawable.ic_outline_sale_24,
