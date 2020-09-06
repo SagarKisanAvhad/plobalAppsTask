@@ -15,13 +15,13 @@
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="@dimen/margin_medium"
         app:layout_constraintTop_toTopOf="parent"
-        app:cardCornerRadius="5dp"
-        app:strokeColor="@color/colorAccent"
-        app:strokeWidth="1dp"
-        app:cardElevation="5dp"
-        app:cardMaxElevation="8dp"
+        app:cardCornerRadius="@dimen/card_corner_radius"
+        app:strokeColor="@color/card_stroke_color"
+        app:strokeWidth="@dimen/card_stroke_width"
+        app:cardElevation="@dimen/card_elevation"
+        app:cardMaxElevation="@dimen/card_max_elevation"
         app:cardPreventCornerOverlap="true"
         app:cardUseCompatPadding="false">
 
@@ -34,10 +34,10 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:textStyle="bold"
-                android:textSize="20sp"
+                android:textSize="@dimen/dimen_company_name_size"
                 android:text="@{company.name}"
-                android:layout_marginTop="16dp"
-                android:layout_marginStart="8dp"
+                android:layout_marginTop="@dimen/margin_large"
+                android:layout_marginStart="@dimen/margin_medium"
                 app:layout_constraintHorizontal_chainStyle="spread_inside"
                 app:layout_constraintStart_toEndOf="@id/iv_company"
                 app:layout_constraintTop_toTopOf="parent"
@@ -48,7 +48,7 @@
                 android:id="@+id/tv_company_sector"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:textSize="12sp"
+                android:textSize="@dimen/dimen_company_sector"
                 android:text="@{company.name}"
                 app:layout_constraintHorizontal_chainStyle="spread_inside"
                 app:layout_constraintStart_toStartOf="@id/tv_company_name"
@@ -60,10 +60,10 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:textStyle="bold"
-                android:textSize="20sp"
+                android:textSize="@dimen/dimen_total_sale_value"
                 android:gravity="end"
-                android:layout_marginEnd="8dp"
-                android:layout_marginStart="8dp"
+                android:layout_marginEnd="@dimen/margin_medium"
+                android:layout_marginStart="@dimen/margin_medium"
                 app:layout_constraintStart_toEndOf="@id/tv_company_name"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@id/tv_company_name"
@@ -74,22 +74,22 @@
                 android:id="@+id/tv_total"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="12sp"
+                android:textSize="@dimen/dimen_total_lable_size"
                 android:gravity="end"
                 app:layout_constraintEnd_toEndOf="@id/tv_sale"
                 app:layout_constraintBottom_toTopOf="@id/tv_sale"
-                android:text="Total Sales" />
+                android:text="@string/total_sales_label" />
 
             <ImageView
                 android:id="@+id/iv_company"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
+                android:layout_marginStart="@dimen/margin_medium"
                 app:layout_constraintTop_toTopOf="@id/tv_company_name"
                 app:layout_constraintBottom_toBottomOf="@id/tv_company_sector"
                 app:layout_constraintStart_toStartOf="parent"
                 app:srcCompat="@drawable/ic_baseline_blur_circular_24"
-                android:contentDescription="company image" />
+                android:contentDescription="@string/content_description_company_image" />
 
             <View
                 android:id="@+id/view_bottom"
@@ -105,14 +105,14 @@
                 android:id="@+id/tv_view_detail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="14sp"
+                android:textSize="@dimen/dimen_view_detail_size"
                 android:gravity="end"
-                android:padding="8dp"
-                android:layout_marginTop="16dp"
+                android:padding="@dimen/padding_medium"
+                android:layout_marginTop="@dimen/margin_large"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_company_sector"
-                android:text="View Details" />
+                android:text="@string/view_details_label" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.card.MaterialCardView>
 

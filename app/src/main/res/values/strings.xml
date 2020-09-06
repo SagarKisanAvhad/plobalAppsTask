@@ -7,4 +7,12 @@
     <string name="add_to_card">ADD TO CARD</string>
     <string name="downloads">DOWNLOADS</string>
     <string name="user_sessions">USER SESSIONS</string>
+    <string name="leaderboard">LEADERBOARD</string>
+    <string name="view_details_label">View Details</string>
+    <string name="content_description_company_image">company image</string>
+    <string name="total_sales_label">Total Sales</string>
+    <string name="content_description_session_icon">Session Icon</string>
+    <string name="content_description_download_icon">Download Icon</string>
+    <string name="content_description_add_to_card_icon">Add to card Icon</string>
+    <string name="content_description_sales_icon">Sales Icon</string>
 </resources>

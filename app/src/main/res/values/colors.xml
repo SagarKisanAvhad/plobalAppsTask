@@ -5,8 +5,13 @@
     <color name="colorPrimaryDark">#D3D3D3</color>
     <color name="colorAccent">#D3D3D3</color>
 
+    <color name="card_stroke_color">#D3D3D3</color>
+
     <color name="chart_color">#E9E9E9</color>
     <color name="view_detail_background">#EAEAEA</color>
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+
     <color name="red_100">#F44336</color>
     <color name="red_300">#3F51B5</color>
     <color name="red_500">#9C27B0</color>
@@ -19,4 +24,5 @@
     <color name="green_300">#57BB8A</color>
     <color name="green_500">#673AB7</color>
     <color name="green_700">#0B8043</color>
+    <color name="horizontal_view_color">#E5E5E5</color>
 </resources>

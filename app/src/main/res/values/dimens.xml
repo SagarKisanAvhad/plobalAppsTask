@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="margin_small">4dp</dimen>
+    <dimen name="margin_medium">8dp</dimen>
+    <dimen name="margin_large">16dp</dimen>
+
+    <dimen name="padding_small">4dp</dimen>
+    <dimen name="padding_medium">8dp</dimen>
+    <dimen name="padding_large">16dp</dimen>
+
+    <dimen name="dimen_leaderboard_heading_size">24sp</dimen>
+    <dimen name="dimen_sort_by_heading_size">20sp</dimen>
+    <dimen name="dimen_view_detail_size">14sp</dimen>
+    <dimen name="dimen_total_lable_size">12sp</dimen>
+    <dimen name="dimen_total_sale_value">20sp</dimen>
+    <dimen name="dimen_company_sector">12sp</dimen>
+    <dimen name="dimen_company_name_size">20sp</dimen>
+    <dimen name="card_corner_radius">5dp</dimen>
+    <dimen name="card_stroke_width">1dp</dimen>
+    <dimen name="card_elevation">5dp</dimen>
+    <dimen name="card_max_elevation">8dp</dimen>
+    <dimen name="line_chart_height">300dp</dimen>
+    <dimen name="horizontal_view_height">2dp</dimen>
+    <dimen name="sort_bottom_sheet_text_size">20sp</dimen>
+    <dimen name="margin_extra_large">24dp</dimen>
+</resources>
