@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!--<color name="colorPrimary">#969EEE</color>
-    <color name="colorPrimaryDark">#555C96</color>
-    <color name="colorAccent">#969EEE</color>-->
 
     <color name="colorPrimary">#D3D3D3</color>
     <color name="colorPrimaryDark">#D3D3D3</color>
     <color name="colorAccent">#D3D3D3</color>
 
+    <color name="chart_color">#E9E9E9</color>
+    <color name="view_detail_background">#EAEAEA</color>
     <color name="red_100">#F44336</color>
     <color name="red_300">#3F51B5</color>
     <color name="red_500">#9C27B0</color>

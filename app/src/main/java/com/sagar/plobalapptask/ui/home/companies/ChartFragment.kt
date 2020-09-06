@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import com.github.mikephil.charting.components.Legend
@@ -71,7 +72,9 @@ class ChartFragment : Fragment() {
             val lineDataSet = LineDataSet(yAxisValues, "").apply {
                 fillAlpha = 110
                 color = Color.BLACK
+                fillColor = ContextCompat.getColor(requireContext(), R.color.chart_color)
                 setCircleColor(Color.BLACK)
+                highLightColor = ContextCompat.getColor(requireContext(), R.color.chart_color)
                 lineWidth = 1F
                 valueTextSize = 9F
                 circleSize = 2F
@@ -81,13 +84,16 @@ class ChartFragment : Fragment() {
             }
             val listOfLineDataSet = listOf(lineDataSet)
             binding.chart.apply {
-                axisLeft.isEnabled = true
-                axisRight.isEnabled = true
+                axisLeft.isEnabled = false
+                axisRight.isEnabled = false
+                axisLeft.setDrawGridLines(false)
+                axisRight.setDrawGridLines(false)
+                xAxis.setDrawGridLines(false)
                 xAxis.isEnabled = true
+                setDrawGridBackground(false)
                 animateY(1000)
                 setDescription("")
                 xAxis.position = XAxis.XAxisPosition.BOTTOM
-                setDrawGridBackground(true)
                 xAxis.setDrawAxisLine(true)
                 data = LineData(xAxisValues, listOfLineDataSet)
             }
