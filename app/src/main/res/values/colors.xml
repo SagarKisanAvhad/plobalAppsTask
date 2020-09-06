@@ -4,8 +4,8 @@
     <color name="colorPrimaryDark">#555C96</color>
     <color name="colorAccent">#969EEE</color>-->
 
-    <color name="colorPrimary">#E5E5E5</color>
-    <color name="colorPrimaryDark">#E5E5E5</color>
+    <color name="colorPrimary">#D3D3D3</color>
+    <color name="colorPrimaryDark">#D3D3D3</color>
     <color name="colorAccent">#D3D3D3</color>
 
     <color name="red_100">#F44336</color>
